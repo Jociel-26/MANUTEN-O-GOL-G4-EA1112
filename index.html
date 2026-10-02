@@ -9,7 +9,7 @@
     :root{--bg:#0f1115;--panel:#171a21;--panel2:#1f2430;--text:#f2f5f7;--muted:#aeb7c2;--line:#2e3440;--green:#26c281;--red:#ff5d5d;--yellow:#f7c948;--blue:#56a8ff}
     *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:linear-gradient(180deg,#0d0f13,#12151b 60%,#0e1014);color:var(--text);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:24px}.hero{padding:28px;border:1px solid var(--line);background:linear-gradient(135deg,#171a21,#11141a);border-radius:22px;box-shadow:0 16px 50px #0006}.hero h1{margin:0 0 6px;font-size:clamp(28px,4vw,48px);line-height:1.05}.hero p{margin:0;color:var(--muted)}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.chip{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:#11151b;color:#d7dde5;font-size:13px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}.card h2,.card h3{margin-top:0}.muted{color:var(--muted)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.chip{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:#11151b;color:#d7dde5;font-size:13px;text-decoration:none}.chip:hover{border-color:#586171;background:#191e27}.category{margin-top:42px;padding-top:18px;border-top:1px solid var(--line)}.category-title{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-size:34px}.category-sub{margin:0 0 18px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}.card h2,.card h3{margin-top:0}.muted{color:var(--muted)}
     .section{margin-top:34px}.section>h2{font-size:28px;margin-bottom:12px}.diagram{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:#fff}.diagram-link{display:block;margin:14px 0 18px}.diagram-note{color:var(--muted);font-size:13px;margin-top:-8px;margin-bottom:18px}.procedure{display:grid;grid-template-columns:1fr 1fr;gap:16px}.proc{border-radius:18px;padding:20px;border:1px solid var(--line)}.proc.green{background:linear-gradient(180deg,#12251d,#152019);border-color:#214b37}.proc.red{background:linear-gradient(180deg,#2a1618,#201417);border-color:#5f2d31}.order{font-size:clamp(22px,3vw,34px);font-weight:800;letter-spacing:.03em;margin:12px 0}.boltmap{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:18px 0}.bolt{min-height:66px;border-radius:14px;border:1px solid #ffffff20;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;background:#0a0c0f55}.bolt.empty{visibility:hidden}.label{font-size:12px;color:var(--muted);text-align:center;margin-top:5px}.warn{border-left:4px solid var(--yellow);background:#2d2918;padding:12px 14px;border-radius:10px;margin-top:14px;color:#fff5c8}.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.item{padding:16px;border-radius:14px;background:var(--panel2);border:1px solid var(--line)}.item strong{display:block;margin-bottom:5px}.ok{color:#75e0ae}.note{color:#ffd86b}.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.price{font-size:28px;font-weight:800}.checklist label{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}input[type=checkbox]{transform:scale(1.2);margin-top:4px}.footer{padding:34px 0 12px;color:#7f8995;text-align:center;font-size:13px}
     @media(max-width:820px){.grid,.procedure,.specs,.tools{grid-template-columns:1fr}.boltmap{grid-template-columns:repeat(3,1fr)}}
   </style>
@@ -19,12 +19,17 @@
     <section class="hero">
       <h1>Gol G4 EA111 — Central de Manutenção</h1>
       <p>Volkswagen Gol City G4 2013 • 1.0 8V EA111 • referência pessoal de manutenção</p>
-      <div class="chips"><span class="chip">Procedimentos</span><span class="chip">Peças aprovadas</span><span class="chip">Fluidos</span><span class="chip">Ferramentas</span><span class="chip">Observações</span></div>
+      <div class="chips"><a class="chip" href="#procedimentos">Procedimentos</a><a class="chip" href="#pecas">Peças</a><a class="chip" href="#fluidos">Fluidos</a><a class="chip" href="#ferramentas">Ferramentas</a><a class="chip" href="#diagnosticos">Diagnósticos / observações</a></div>
     </section>
 
     <section class="grid">
       <article class="card"><h2>Procedimento atual</h2><p><strong>Tampa de válvulas / mancal do comando</strong></p><p class="muted">Sequência validada para EA111 1.0 8V do Gol G4.</p></article>
       <article class="card"><h2>Status</h2><p><span class="ok">●</span> Óleo e fluido hidráulico definidos</p><p><span class="ok">●</span> Tuchos INA aprovados</p><p><span class="note">●</span> Avaliação do cabeçote ainda pendente</p><p><span class="ok">●</span> Todas as ferramentas definidas até aqui já foram compradas</p></article>
+    </section>
+
+    <section class="category" id="procedimentos">
+      <h2 class="category-title">Procedimentos</h2>
+      <p class="category-sub">Passo a passo de desmontagem, montagem, vedação, torque e serviços já documentados.</p>
     </section>
 
     <section class="section">
@@ -134,18 +139,23 @@
       <div class="warn">Cabeçote de alumínio: se a vela não entrar livremente nas primeiras voltas, pare. Não force a rosca. Rosqueamento cruzado pode danificar o cabeçote.</div>
     </section>
 
+    <section class="category" id="diagnosticos">
+      <h2 class="category-title">Diagnósticos e observações</h2>
+      <p class="category-sub">Achados das inspeções, decisões provisórias e pontos que ainda precisam de medição ou confirmação.</p>
+    </section>
+
     <section class="section">
       <h2>Tuchos, balancins e decisão sobre o cabeçote</h2>
       <div class="specs">
-        <article class="item"><strong>Tuchos hidráulicos INA</strong><span class="note">AGUARDAR INSPEÇÃO</span><p><strong>Referência:</strong> INA 420 0098 10 / 420009810<br><strong>Quantidade:</strong> 8 unidades.</p></article>
-        <article class="item"><strong>Balancins INA</strong><span class="note">AGUARDAR INSPEÇÃO</span><p><strong>Referência:</strong> INA 422 0013 10 / 422001310<br><strong>Quantidade:</strong> 8 unidades.</p></article>
+        <article class="item"><strong>Tuchos hidráulicos atuais</strong><span class="note">INSPECIONADOS</span><p>Dos 8 removidos, 5 apresentaram compressibilidade e folga lateral perceptível; 3 permaneceram rígidos e praticamente sem folga lateral. Decisão: substituir o jogo completo pelos INA 420 0098 10 / 420009810.</p></article>
+        <article class="item"><strong>Balancins atuais</strong><span class="ok">REUTILIZAÇÃO PREVISTA</span><p>Inspeção visual sem desgaste grave aparente, sem folga vertical anormal e apenas pequena folga lateral. Reutilizar no reparo intermediário, com conferência final antes da montagem.</p></article>
       </div>
       <div class="card" style="margin-top:14px">
-        <h3>Critério antes da compra</h3>
-        <p>Não comprar o conjunto preventivamente. Primeiro desmontar e inspecionar os tuchos, balancins, comando e superfícies/mancais do cabeçote atual.</p>
-        <p><strong>Se o desgaste estiver localizado e o restante do cabeçote estiver em boas condições:</strong> avaliar a substituição dos 8 tuchos + 8 balancins pelo conjunto INA acima.</p>
-        <p><strong>Se a inspeção mostrar desgaste severo ou generalizado no conjunto superior:</strong> interromper a compra isolada de tuchos/balancins e avaliar um cabeçote novo completo, comparando estado do comando, mancais, folgas e custo total.</p>
-        <div class="warn">Decisão registrada: nenhuma compra de tuchos/balancins será feita antes da inspeção visual e dimensional do conjunto atual.</div>
+        <h3>Decisão atual</h3>
+        <p><strong>Tuchos:</strong> substituir as 8 unidades pelo jogo INA já definido.</p>
+        <p><strong>Balancins:</strong> manter os atuais no reparo intermediário, desde que a conferência final não revele dano.</p>
+        <p><strong>Comando e mancais:</strong> as fotos não mostraram dano catastrófico evidente; a condição dimensional continua sendo o critério definitivo.</p>
+        <div class="warn">Este é o plano para o reparo intermediário. A retífica completa do motor permanece planejada para uma etapa posterior.</div>
       </div>
     </section>
 
@@ -174,16 +184,37 @@
       <div class="warn"><strong>Torque e sequência dos parafusos do cárter:</strong> ainda não registrados como definitivos. Confirmar em documentação específica do EA111 1.0 8V antes da montagem; não usar valor genérico.</div>
     </section>
 
+    <section class="category" id="pecas">
+      <h2 class="category-title">Peças</h2>
+      <p class="category-sub">Peças aprovadas, compradas, identificadas ou com troca definida.</p>
+    </section>
+
     <section class="section">
-      <h2>Peças e fluidos aprovados</h2>
+      <h2>Peças aprovadas / definidas</h2>
       <div class="specs">
-        <article class="item"><strong>Óleo do motor — Volkswagen Original Maxi Performance</strong><span class="ok">APROVADO</span><p>5W-40 sintético • VW 502 00 / 505 00<br>Ref. GJZZ502M2BRA<br>Compra: 4 L • troca aproximada: 3,3 L • nível final pela vareta.</p></article>
-        <article class="item"><strong>Fluido de direção hidráulica — Volkswagen Original</strong><span class="ok">APROVADO</span><p>G 004 000 M2 • 1 litro • verde.</p></article>
         <article class="item"><strong>Tuchos hidráulicos INA</strong><span class="ok">TROCA DEFINIDA — COMPRA PENDENTE</span><p>Jogo com 8 unidades<br>INA 420 0098 10 / 420009810.<br>Decisão após inspeção: substituir os 8. Dos tuchos removidos, 5 apresentaram compressibilidade e folga lateral perceptível; 3 permaneceram rígidos e praticamente sem folga lateral.</p></article>
         <article class="item"><strong>Válvula de purga do cânister Bosch</strong><span class="ok">APROVADO</span><p>Bosch 0 280 142 310<br>Equivalente VW 377 906 291.</p></article>
         <article class="item"><strong>Bomba de direção hidráulica</strong><span class="note">IDENTIFICADA</span><p>ZF 7613 955 004<br>VW 5U0 422 154 E<br>Pequeno vazamento ainda a diagnosticar.</p></article>
         <article class="item"><strong>Retentor superior da caixa de direção hidráulica — Vogmar</strong><span class="ok">COMPRADO</span><p>Retentor superior da caixa de direção, adquirido para corrigir o vazamento de fluido pela região superior da caixa com passagem para o interior do veículo.</p><p><strong>Aplicação anunciada:</strong> Gol 1996 / G2 / G3 / G4 • direção hidráulica.<br><strong>Marca:</strong> Vogmar.<br><strong>Números informados no anúncio:</strong> 57055K • 10100133 • 16900238 • 8200615149 • 16902923 • caixa 16902923.</p><p><strong>Valor registrado:</strong> R$ 19,65.</p></article>
       </div>
+    </section>
+
+    <section class="category" id="fluidos">
+      <h2 class="category-title">Fluidos</h2>
+      <p class="category-sub">Óleos e fluidos aprovados para este veículo.</p>
+    </section>
+
+    <section class="section">
+      <h2>Fluidos aprovados</h2>
+      <div class="specs">
+        <article class="item"><strong>Óleo do motor — Volkswagen Original Maxi Performance</strong><span class="ok">APROVADO</span><p>5W-40 sintético • VW 502 00 / 505 00<br>Ref. GJZZ502M2BRA<br>Compra: 4 L • troca aproximada: 3,3 L • nível final pela vareta.</p></article>
+        <article class="item"><strong>Fluido de direção hidráulica — Volkswagen Original</strong><span class="ok">APROVADO</span><p>G 004 000 M2 • 1 litro • verde.</p></article>
+      </div>
+    </section>
+
+    <section class="category" id="ferramentas">
+      <h2 class="category-title">Ferramentas</h2>
+      <p class="category-sub">Ferramentas já compradas e referências de uso nos procedimentos.</p>
     </section>
 
     <section class="section">
